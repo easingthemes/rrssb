@@ -125,7 +125,7 @@ $.fn.rrssb = function(options) {
 	this.each(function(index, el) {
     	$(el).addClass('rrssb-buttons');
     });
-    
+
 	/*
 	 * Utility functions
 	 */
@@ -367,7 +367,7 @@ $.fn.rrssb = function(options) {
 		rrssbInit();
 	});
 
-} 
+};
 // end plugin function
 
 })(window, jQuery);
