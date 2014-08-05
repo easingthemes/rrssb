@@ -39,11 +39,23 @@ $.fn.rrssb = function(options) {
     // 2. Create social networks api links
 	var apiLinks = {
 		facebook: 'https://www.facebook.com/sharer.php?u={url}',
-		linkedin: 'https://www.linkedin.com/shareArticle?mini=true&url={url}&title={title}&summary={text}&source={baseUrl}',
-	    twitter: 'https://twitter.com/intent/tweet?url={url}&text={text}',
+		linkedin: 'https://www.linkedin.com/shareArticle?mini=true&url={url}&title={title}&summary={description}&source={baseUrl}',
+	    twitter: 'https://twitter.com/intent/tweet?url={url}&text={description}',
 	    googleplus: 'https://plus.google.com/share?url={url}',
-	    pinterest: 'https://www.pinterest.com/pin/create/button/?media={image}&url={url}&description={text}'      
+	    pinterest: 'https://www.pinterest.com/pin/create/button/?media={image}&url={url}&description={description}'      
     };
+
+    // Update links with user settings data
+    var apiLink = function(website){
+        var apiUrl = apiLinks[website];
+        apiUrl = apiUrl.replace('{url}', encodeURIComponent(settings.url));
+        apiUrl = apiUrl.replace('{title}', encodeURIComponent(settings.title));
+        apiUrl = apiUrl.replace('{description}', encodeURIComponent(settings.description));
+        apiUrl = apiUrl.replace('{image}', encodeURIComponent(settings.image));
+        apiUrl = apiUrl.replace('{baseUrl}', encodeURIComponent(settings.baseUrl));
+        return apiUrl;
+    };
+
 	/*
 	 * Utility functions
 	 */
