@@ -27,7 +27,7 @@ $.fn.rrssb = function(options) {
     // 1. Set default options
     var settings = $.extend({
         title: 'Ridiculously Responsive Social Sharing Buttons by KNI Labs',
-        text: 'It seemed like we were constantly making custom social sharing buttons for every single project, so we decided to create a super flexible system that would work in any container. SASS-powered, retina ready, and auto-magical resizing. A KNI Labs freebie.',
+        description: 'It seemed like we were constantly making custom social sharing buttons for every single project, so we decided to create a super flexible system that would work in any container. SASS-powered, retina ready, and auto-magical resizing. A KNI Labs freebie.',
         image: 'http://kurtnoble.com/labs/rrssb/media/rrssb-preview.png',
         url: window.location.href,
         baseUrl: window.location.hostname,
@@ -36,6 +36,14 @@ $.fn.rrssb = function(options) {
         showIcon: true
     }, options);
 
+    // 2. Create social networks api links
+	var apiLinks = {
+		facebook: 'https://www.facebook.com/sharer.php?u={url}',
+		linkedin: 'https://www.linkedin.com/shareArticle?mini=true&url={url}&title={title}&summary={text}&source={baseUrl}',
+	    twitter: 'https://twitter.com/intent/tweet?url={url}&text={text}',
+	    googleplus: 'https://plus.google.com/share?url={url}',
+	    pinterest: 'https://www.pinterest.com/pin/create/button/?media={image}&url={url}&description={text}'      
+    };
 	/*
 	 * Utility functions
 	 */
