@@ -120,6 +120,12 @@ $.fn.rrssb = function(options) {
     	$('<a href="'+apiLink(website)+'">'+buttonIcon+buttonText+'</a>').addClass(popup).appendTo($(el).addClass(website));
 
     });
+	
+	// Add styling class
+	this.each(function(index, el) {
+    	$(el).addClass('rrssb-buttons');
+    });
+    
 	/*
 	 * Utility functions
 	 */
