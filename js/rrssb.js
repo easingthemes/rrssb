@@ -21,6 +21,20 @@
 ;(function(window, jQuery, undefined) {
 	'use strict';
 
+// start plugin function
+$.fn.rrssb = function(options) {
+
+    // 1. Set default options
+    var settings = $.extend({
+        title: 'Ridiculously Responsive Social Sharing Buttons by KNI Labs',
+        text: 'It seemed like we were constantly making custom social sharing buttons for every single project, so we decided to create a super flexible system that would work in any container. SASS-powered, retina ready, and auto-magical resizing. A KNI Labs freebie.',
+        image: 'http://kurtnoble.com/labs/rrssb/media/rrssb-preview.png',
+        url: window.location.href,
+        baseUrl: window.location.hostname,
+        showPopup: true,
+        showText: true,
+        showIcon: true
+    }, options);
 
 	/*
 	 * Utility functions
@@ -263,5 +277,7 @@
 		rrssbInit();
 	});
 
+} 
+// end plugin function
 
 })(window, jQuery);
