@@ -36,9 +36,12 @@
         .valign {
             height: 300px;
             border:1px #ccc solid;
+            text-align: center;
         }
         .valign img {
-            
+            display: inline-block;
+            max-height: 300px;
+            width: auto;
         }
         </style>
 
@@ -53,14 +56,13 @@
             <!-- page stuff -->
             <h1>Ridiculously Responsive Social Sharing Buttons</h1>
             <div class="valign">
-                <img src="media/favicon.png" />
+                <img src="media/rrssb-preview.png" />
             </div>
-            <img class="rrssb-preview" src="media/rrssb-preview.png" />
+            
             <a  href="https://www.facebook.com/sharer.php?app_id=113869198637480&amp;sdk=joey&amp;u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;display=popup">test</a>
             <hr />
 
             <div class="share-container clearfix">
-                <span class="label">share this page:</span>
                 <!-- buttons start here -->
                 <ul class="clearfix mybuttons">
                     <li data-rsb-website="linkedin" data-rsb-icon="media/favicon.png" data-rsb-text="custom text"></li>
