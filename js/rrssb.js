@@ -33,12 +33,15 @@ $.fn.rrssb = function(options) {
         baseUrl: window.location.hostname,
         showPopup: true,
         showText: true,
-        showIcon: true
+        showIcon: true,
+        email: 'johndoe@domain.com',
+        emailSubject: 'Check out how ridiculously responsive these social buttons are',
+        emailBody: 'http://kurtnoble.com/labs/rrssb/index.html'
     }, options);
 
     // 2. Create social networks api links
 	var apiLinks = {
-		email: 'mailto:?subject=Check%20out%20how%20ridiculously%20responsive%20these%20social%20buttons%20are&amp;body=http%3A%2F%2Fkurtnoble.com%2Flabs%2Frrssb%2Findex.html',
+		email: 'mailto:{email}?subject={emailSubject}&body={emailBody}',
 		facebook: 'https://www.facebook.com/sharer.php?u={url}',
 		linkedin: 'https://www.linkedin.com/shareArticle?mini=true&url={url}&title={title}&summary={description}&source={baseUrl}',
 	    twitter: 'https://twitter.com/intent/tweet?url={url}&text={description}',
@@ -55,6 +58,9 @@ $.fn.rrssb = function(options) {
         apiUrl = apiUrl.replace('{description}', encodeURIComponent(settings.description));
         apiUrl = apiUrl.replace('{image}', encodeURIComponent(settings.image));
         apiUrl = apiUrl.replace('{baseUrl}', encodeURIComponent(settings.baseUrl));
+        apiUrl = apiUrl.replace('{email}', settings.email);
+        apiUrl = apiUrl.replace('{emailSubject}', encodeURIComponent(settings.emailSubject));
+        apiUrl = apiUrl.replace('{emailBody}', encodeURIComponent(settings.emailBody));
         return apiUrl;
     };
 
