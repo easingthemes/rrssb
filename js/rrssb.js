@@ -41,7 +41,7 @@ $.fn.rrssb = function(options) {
 
     // 2. Create social networks api links
 	var apiLinks = {
-		email: 'mailto:{email}?subject={emailSubject}&body={emailBody}',
+		email: 'mailto:{email}&subject={emailSubject}&body={emailBody}',
 		facebook: 'https://www.facebook.com/sharer.php?u={url}',
 		linkedin: 'https://www.linkedin.com/shareArticle?mini=true&url={url}&title={title}&summary={description}&source={baseUrl}',
 	    twitter: 'https://twitter.com/intent/tweet?url={url}&text={description}',
